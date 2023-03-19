@@ -1,25 +1,18 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
-name: sejarah joang API with nodejs
 
 on:
   push:
     branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-
+name : deploy api on push
 jobs:
-  build:
-
+  web-deploy:
+    name : auto deploy
     runs-on: ubuntu-latest
-
     steps:
         - name: get lastest code
-        - uses: actions/checkout@v3
+          uses: actions/checkout@v3
 
         - name: deploy
-        - uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+          uses: SamKirkland/FTP-Deploy-Action@v4.3.4
           with:
             server: ${{ secrets.FTP_SERVER }}
             username: ${{ secrets.FTP_USERNAME }}
