@@ -11,7 +11,7 @@ jobs:
         - name: get lastest code
           uses: actions/checkout@v3
 
-        - name: deploy
+        - name: deploys
           uses: SamKirkland/FTP-Deploy-Action@v4.3.4
           with:
             server: ${{ secrets.FTP_SERVER }}
